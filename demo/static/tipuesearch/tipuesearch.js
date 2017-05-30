@@ -1,6 +1,6 @@
 
 /*
-Tipue Search 6.0
+Tipue Search 6.1
 Copyright (c) 2017 Tipue
 Tipue Search is released under the MIT License
 http://www.tipue.com/search
@@ -133,7 +133,6 @@ http://www.tipue.com/search
                function getTipueSearch(start, replace)
                {
                     var out = '';
-                    var results = '';
                     var show_replace = false;
                     var show_stop = false;
                     var standard = true;
@@ -421,14 +420,14 @@ http://www.tipue.com/search
                                                        if (set.highlightTerms)
                                                        {
                                                             var patr = new RegExp('(' + d_w[f] + ')', 'gi');
-                                                            t = t.replace(patr, "<span class=\"h0011\">$1</span>");
+                                                            t = t.replace(patr, "<h0011>$1<h0012>");
                                                        }
                                                   }
                                              }
                                              else if (set.highlightTerms)
                                              {
                                                   var patr = new RegExp('(' + d + ')', 'gi');
-                                                  t = t.replace(patr, "<span class=\"h0011\">$1</span>");
+                                                  t = t.replace(patr, "<span class=\"tipue_search_content_bold\">$1</span>");
                                              }
                                                                                   
                                              var t_d = '';
@@ -450,7 +449,8 @@ http://www.tipue.com/search
                                                   t_d += ' ...';
                                              }
                                              
-                                             t_d = t_d.replace(/h0011/g, 'tipue_search_content_bold');
+                                             t_d = t_d.replace(/h0011/g, 'span class=\"tipue_search_content_bold\"');
+                                             t_d = t_d.replace(/h0012/g, '/span');
                                              
                                              out += '<div class="tipue_search_content_text">' + t_d + '</div>';
                                         }
