@@ -137,7 +137,7 @@ http://www.tipue.com/search
                     var show_stop = false;
                     var standard = true;
                     var c = 0;
-                    found = [];
+                    var found = [];
                     
                     var d_o = $('#tipue_search_input').val();
                     var d = d_o.toLowerCase();
@@ -354,7 +354,7 @@ http://www.tipue.com/search
                               }
                               else
                               {
-                                   c_c = c.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                   var c_c = c.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                                    out += '<div id="tipue_search_results_count">' + c_c + ' ' + tipuesearch_string_5;
                               }
                               if (set.showTime)
