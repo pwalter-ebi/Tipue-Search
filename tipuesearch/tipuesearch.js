@@ -225,24 +225,24 @@ http://www.tipue.com/search
                                         {
                                              var pat = new RegExp(d_w[f], 'gi');
                                         }
-                                        if (tipuesearch_in.pages[i].title.search(pat) != -1)
+                                        if (tipuesearch_in.pages[i].title && tipuesearch_in.pages[i].title.search(pat) != -1)
                                         {
                                              var m_c = tipuesearch_in.pages[i].title.match(pat).length;
                                              score += (20 * m_c);
                                         }
-                                        if (tipuesearch_in.pages[i].text.search(pat) != -1)
+                                        if (tipuesearch_in.pages[i].text && tipuesearch_in.pages[i].text.search(pat) != -1)
                                         {
                                              var m_c = tipuesearch_in.pages[i].text.match(pat).length;
                                              score += (20 * m_c);
                                         }
 
-                                        if (tipuesearch_in.pages[i].tags.search(pat) != -1)
+                                        if (tipuesearch_in.pages[i].tags && tipuesearch_in.pages[i].tags.search(pat) != -1)
                                         {
                                              var m_c = tipuesearch_in.pages[i].tags.match(pat).length;
                                              score += (10 * m_c);
                                         }
 
-                                        if (tipuesearch_in.pages[i].url.search(pat) != -1)
+                                        if (tipuesearch_in.pages[i].url && tipuesearch_in.pages[i].url.search(pat) != -1)
                                         {
                                              score += 20;
                                         }
@@ -261,7 +261,7 @@ http://www.tipue.com/search
                                         if (d_w[f].match('^-'))
                                         {
                                              pat = new RegExp(d_w[f].substring(1), 'i');
-                                             if (tipuesearch_in.pages[i].title.search(pat) != -1 || tipuesearch_in.pages[i].text.search(pat) != -1 || tipuesearch_in.pages[i].tags.search(pat) != -1)
+                                             if (tipuesearch_in.pages[i].title && tipuesearch_in.pages[i].title.search(pat) != -1 || tipuesearch_in.pages[i].text && tipuesearch_in.pages[i].text.search(pat) != -1 || tipuesearch_in.pages[i].tags && tipuesearch_in.pages[i].tags.search(pat) != -1)
                                              {
                                                   score = 0;
                                              }
@@ -288,24 +288,24 @@ http://www.tipue.com/search
                                    var score = 0;
                                    var s_t = tipuesearch_in.pages[i].text;
                                    var pat = new RegExp(d, 'gi');
-                                   if (tipuesearch_in.pages[i].title.search(pat) != -1)
+                                   if (tipuesearch_in.pages[i].title && tipuesearch_in.pages[i].title.search(pat) != -1)
                                    {
                                         var m_c = tipuesearch_in.pages[i].title.match(pat).length;
                                         score += (20 * m_c);
                                    }
-                                   if (tipuesearch_in.pages[i].text.search(pat) != -1)
+                                   if (tipuesearch_in.pages[i].text && tipuesearch_in.pages[i].text.search(pat) != -1)
                                    {
                                         var m_c = tipuesearch_in.pages[i].text.match(pat).length;
                                         score += (20 * m_c);
                                    }
 
-                                   if (tipuesearch_in.pages[i].tags.search(pat) != -1)
+                                   if (tipuesearch_in.pages[i].tags && tipuesearch_in.pages[i].tags.search(pat) != -1)
                                    {
                                         var m_c = tipuesearch_in.pages[i].tags.match(pat).length;
                                         score += (10 * m_c);
                                    }
 
-                                   if (tipuesearch_in.pages[i].url.search(pat) != -1)
+                                   if (tipuesearch_in.pages[i].url && tipuesearch_in.pages[i].url.search(pat) != -1)
                                    {
                                         score += 20;
                                    }
